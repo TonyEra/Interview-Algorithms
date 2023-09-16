@@ -1,4 +1,4 @@
-package com.test;
+package com.interview;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
