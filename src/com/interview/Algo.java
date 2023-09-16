@@ -1,4 +1,6 @@
-package com.interview;
+package com.test;
+
+import java.util.Scanner;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -12,6 +14,34 @@ public class Algo {
 		System.out.println(mathFunction(1, 2, -1));
 		System.out.println(mathFunction(3, 3, 1));
 		System.out.println(mathFunction(7, 1, 11));
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Please input 3 values with a space in between them ex: 1 2 3");
+		System.out.println("Type quit to exit the application.");
+		while(true) {
+			String input = sc.nextLine();
+			if(input.equalsIgnoreCase("quit")) {
+				sc.close();
+				break;
+			}
+			
+			if(input.contains(" ")) {
+				String[] partitionedFormat = input.split(" ");
+				if(partitionedFormat.length != 3) {
+					System.err.println("Wrong Format: Please input 3 values with a space in "
+							+ "between them ex: 1 2 3");
+					continue;
+				}
+
+				int a = Integer.parseInt(partitionedFormat[0]);
+				int b = Integer.parseInt(partitionedFormat[1]);
+				int answer = Integer.parseInt(partitionedFormat[2]);
+				
+				System.out.println("Possible Arithmetic Operations: " + mathFunction(a, b, answer));
+			}
+
+		}
 	}
 	
 	/**
