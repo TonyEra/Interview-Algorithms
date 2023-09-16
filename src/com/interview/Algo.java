@@ -40,6 +40,11 @@ public class Algo {
 				
 				System.out.println("Possible Arithmetic Operations: " + mathFunction(a, b, answer));
 			}
+			else {
+				System.err.println("Wrong Format: Please input 3 values with a space in "
+						+ "between them ex: 1 2 3");
+				continue;
+			}
 
 		}
 	}
